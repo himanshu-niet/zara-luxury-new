@@ -11,7 +11,7 @@ const ProductItem = ({ item }) => {
         <Link to={`/product/${item._id}`} className="img-prod">
           <img
             className="img-fluid"
-            src={item.images.url}
+            src={item.images[0].url}
             alt="Colorlib Template"
           />
           <span className="status">{item.discount}% Off</span>
@@ -20,7 +20,7 @@ const ProductItem = ({ item }) => {
         <div className="text py-3 pb-4 px-3">
           <div className="d-flex">
             <div className="cat">
-            <span>{item.category}</span>
+            <span>{item.category+" "+item.subCategory}</span>
             </div>
             <div className="rating">
               <p className="text-right mb-0">
@@ -35,8 +35,8 @@ const ProductItem = ({ item }) => {
           <h3><Link to={`/product/${item._id}`} >{item.title}</Link></h3>
           <div className="pricing">
             <p className="price">
-             <span className="mr-2 price-dc">${item.price}</span>
-            <span className="price-sale">${getOfferPrice(item.price, item.discount)}</span>
+             <span className="mr-2 price-dc">₹{item.price}</span>
+            <span className="price-sale">₹{getOfferPrice(item.price, item.discount)}</span>
             </p>
           </div>
           <p className="bottom-area d-flex px-3">
@@ -75,7 +75,8 @@ const ProductItem = ({ item }) => {
         <div className="text py-3 pb-4 px-3">
           <div className="d-flex">
             <div className="cat">
-              <span>{item.category}</span>
+            <span>{item.category+" "+item.subCategory}</span>
+
             </div>
             <div className="rating">
               <p className="text-right mb-0">
@@ -102,7 +103,7 @@ const ProductItem = ({ item }) => {
           </h3>
           <div className="pricing">
             <p className="price">
-              <span>${item.price}</span>
+              <span>₹{item.price}</span>
             </p>
           </div>
           <p className="bottom-area d-flex px-3">

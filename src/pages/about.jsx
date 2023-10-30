@@ -2,63 +2,18 @@ import React from 'react'
 import Footer from '../components/Common/Footer'
 import Haeder from '../components/Common/Haeder'
 import Bread from '../components/Common/Bread'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
     <>
     <Haeder/>
-    <Bread page={"About"}/>
-
-  <section className="ftco-section ftco-no-pt ftco-no-pb">
-    <div className="container">
-      <div className="row no-gutters ftco-services">
-        <div className="col-lg-4 text-center d-flex align-self-stretch ">
-          <div className="media block-6 services p-4 py-md-5">
-            <div className="icon d-flex justify-content-center align-items-center mb-4">
-              <span className="flaticon-bag" />
-            </div>
-            <div className="media-body">
-              <h3 className="heading">Free Shipping</h3>
-              <p>
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-4 text-center d-flex align-self-stretch ">
-          <div className="media block-6 services p-4 py-md-5">
-            <div className="icon d-flex justify-content-center align-items-center mb-4">
-              <span className="flaticon-customer-service" />
-            </div>
-            <div className="media-body">
-              <h3 className="heading">Support Customer</h3>
-              <p>
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-4 text-center d-flex align-self-stretch ">
-          <div className="media block-6 services p-4 py-md-5">
-            <div className="icon d-flex justify-content-center align-items-center mb-4">
-              <span className="flaticon-payment-security" />
-            </div>
-            <div className="media-body">
-              <h3 className="heading">Secure Payments</h3>
-              <p>
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <Bread page={"About Us"}/>
+  
   <section className="ftco-section ftco-no-pb ftco-no-pt bg-light">
+  
     <div className="container">
+   
       <div className="row">
         <div
           className="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center"
@@ -89,270 +44,126 @@ const About = () => {
               long until a few insidious Copy Writers ambushed her.
             </p>
             <p>
-              <a href="#" className="btn btn-primary">
+              <Link to={"/products"} className="btn btn-primary">
                 Shop now
-              </a>
+              </Link>
             </p>
           </div>
         </div>
       </div>
+
+      <div className="row mt-5">
+  <div className="col-md-12 nav-link-wrap">
+    <div
+      className="nav nav-pills d-flex text-center"
+      id="v-pills-tab"
+      role="tablist"
+      aria-orientation="vertical"
+    >
+      <a
+        className="nav-link ftco-animate active mr-lg-1"
+        id="v-pills-1-tab"
+        data-toggle="pill"
+        href="#v-pills-1"
+        role="tab"
+        aria-controls="v-pills-1"
+        aria-selected="true"
+      >
+        Vision
+      </a>
+      <a
+        className="nav-link ftco-animate mr-lg-1"
+        id="v-pills-2-tab"
+        data-toggle="pill"
+        href="#v-pills-2"
+        role="tab"
+        aria-controls="v-pills-2"
+        aria-selected="false"
+      >
+      Mission
+      </a>
+      <a
+        className="nav-link ftco-animate"
+        id="v-pills-3-tab"
+        data-toggle="pill"
+        href="#v-pills-3"
+        role="tab"
+        aria-controls="v-pills-3"
+        aria-selected="false"
+      >
+      Values
+      </a>
     </div>
-  </section>
-  <section className="ftco-section testimony-section">
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-5">
-          <div className="services-flow">
-            <div className="services-2 p-4 d-flex ">
-              <div className="icon">
-                <span className="flaticon-bag" />
-              </div>
-              <div className="text">
-                <h3>Free Shipping</h3>
-                <p className="mb-0">
-                  Separated they live in. A small river named Duden flows
-                </p>
-              </div>
-            </div>
-            <div className="services-2 p-4 d-flex ">
-              <div className="icon">
-                <span className="flaticon-heart-box" />
-              </div>
-              <div className="text">
-                <h3>Valuable Gifts</h3>
-                <p className="mb-0">
-                  Separated they live in. A small river named Duden flows
-                </p>
-              </div>
-            </div>
-            <div className="services-2 p-4 d-flex ">
-              <div className="icon">
-                <span className="flaticon-payment-security" />
-              </div>
-              <div className="text">
-                <h3>All Day Support</h3>
-                <p className="mb-0">
-                  Separated they live in. A small river named Duden flows
-                </p>
-              </div>
-            </div>
-            <div className="services-2 p-4 d-flex ">
-              <div className="icon">
-                <span className="flaticon-customer-service" />
-              </div>
-              <div className="text">
-                <h3>All Day Support</h3>
-                <p className="mb-0">
-                  Separated they live in. A small river named Duden flows
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-7">
-          <div className="heading-section  mb-5">
-            <h2 className="mb-4">Our satisfied customer says</h2>
-            <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated
-              they live in
-            </p>
-          </div>
-          <div className="carousel-testimony owl-carousel ">
-            <div className="item">
-              <div className="testimony-wrap">
-                <div
-                  className="user-img mb-4"
-                  style={{ backgroundImage: "url(images/person_1.jpg)" }}
-                >
-                  <span className="quote d-flex align-items-center justify-content-center">
-                    <i className="icon-quote-left" />
-                  </span>
-                </div>
-                <div className="text">
-                  <p className="mb-4 pl-4 line">
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <p className="name">Garreth Smith</p>
-                  <span className="position">Marketing Manager</span>
-                </div>
-              </div>
-            </div>
-            <div className="item">
-              <div className="testimony-wrap">
-                <div
-                  className="user-img mb-4"
-                  style={{ backgroundImage: "url(images/person_2.jpg)" }}
-                >
-                  <span className="quote d-flex align-items-center justify-content-center">
-                    <i className="icon-quote-left" />
-                  </span>
-                </div>
-                <div className="text">
-                  <p className="mb-4 pl-4 line">
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <p className="name">Garreth Smith</p>
-                  <span className="position">Interface Designer</span>
-                </div>
-              </div>
-            </div>
-            <div className="item">
-              <div className="testimony-wrap">
-                <div
-                  className="user-img mb-4"
-                  style={{ backgroundImage: "url(images/person_3.jpg)" }}
-                >
-                  <span className="quote d-flex align-items-center justify-content-center">
-                    <i className="icon-quote-left" />
-                  </span>
-                </div>
-                <div className="text">
-                  <p className="mb-4 pl-4 line">
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <p className="name">Garreth Smith</p>
-                  <span className="position">UI Designer</span>
-                </div>
-              </div>
-            </div>
-            <div className="item">
-              <div className="testimony-wrap">
-                <div
-                  className="user-img mb-4"
-                  style={{ backgroundImage: "url(images/person_1.jpg)" }}
-                >
-                  <span className="quote d-flex align-items-center justify-content-center">
-                    <i className="icon-quote-left" />
-                  </span>
-                </div>
-                <div className="text">
-                  <p className="mb-4 pl-4 line">
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <p className="name">Garreth Smith</p>
-                  <span className="position">Web Developer</span>
-                </div>
-              </div>
-            </div>
-            <div className="item">
-              <div className="testimony-wrap">
-                <div
-                  className="user-img mb-4"
-                  style={{ backgroundImage: "url(images/person_1.jpg)" }}
-                >
-                  <span className="quote d-flex align-items-center justify-content-center">
-                    <i className="icon-quote-left" />
-                  </span>
-                </div>
-                <div className="text">
-                  <p className="mb-4 pl-4 line">
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
-                  </p>
-                  <p className="name">Garreth Smith</p>
-                  <span className="position">System Analyst</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section className="ftco-gallery">
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-8 heading-section text-center mb-4 ">
-          <h2 className="mb-4">Follow Us On Instagram</h2>
+  </div>
+  <div className="col-md-12 tab-wrap">
+    <div className="tab-content bg-light" id="v-pills-tabContent">
+      <div
+        className="tab-pane fade show active"
+        id="v-pills-1"
+        role="tabpanel"
+        aria-labelledby="day-1-tab"
+      >
+        <div className="p-4">
+          
           <p>
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts. Separated they
-            live in
+            On her way she met a copy. The copy warned the Little Blind Text,
+            that where it came from it would have been rewritten a thousand
+            times and everything that was left from its origin would be the word
+            "and" and the Little Blind Text should turn around and return to its
+            own, safe country. But nothing the copy said could convince her and
+            so it didn’t take long until a few insidious Copy Writers ambushed
+            her, made her drunk with Longe and Parole and dragged her into their
+            agency, where they abused her for their.
           </p>
         </div>
       </div>
-    </div>
-    <div className="container-fluid px-0">
-      <div className="row no-gutters">
-        <div className="col-md-4 col-lg-2 ">
-          <a
-            href="images/gallery-1.jpg"
-            className="gallery image-popup img d-flex align-items-center"
-            style={{ backgroundImage: "url(images/gallery-1.jpg)" }}
-          >
-            <div className="icon mb-4 d-flex align-items-center justify-content-center">
-              <span className="icon-instagram" />
-            </div>
-          </a>
-        </div>
-        <div className="col-md-4 col-lg-2 ">
-          <a
-            href="images/gallery-2.jpg"
-            className="gallery image-popup img d-flex align-items-center"
-            style={{ backgroundImage: "url(images/gallery-2.jpg)" }}
-          >
-            <div className="icon mb-4 d-flex align-items-center justify-content-center">
-              <span className="icon-instagram" />
-            </div>
-          </a>
-        </div>
-        <div className="col-md-4 col-lg-2 ">
-          <a
-            href="images/gallery-3.jpg"
-            className="gallery image-popup img d-flex align-items-center"
-            style={{ backgroundImage: "url(images/gallery-3.jpg)" }}
-          >
-            <div className="icon mb-4 d-flex align-items-center justify-content-center">
-              <span className="icon-instagram" />
-            </div>
-          </a>
-        </div>
-        <div className="col-md-4 col-lg-2 ">
-          <a
-            href="images/gallery-4.jpg"
-            className="gallery image-popup img d-flex align-items-center"
-            style={{ backgroundImage: "url(images/gallery-4.jpg)" }}
-          >
-            <div className="icon mb-4 d-flex align-items-center justify-content-center">
-              <span className="icon-instagram" />
-            </div>
-          </a>
-        </div>
-        <div className="col-md-4 col-lg-2 ">
-          <a
-            href="images/gallery-5.jpg"
-            className="gallery image-popup img d-flex align-items-center"
-            style={{ backgroundImage: "url(images/gallery-5.jpg)" }}
-          >
-            <div className="icon mb-4 d-flex align-items-center justify-content-center">
-              <span className="icon-instagram" />
-            </div>
-          </a>
-        </div>
-        <div className="col-md-4 col-lg-2 ">
-          <a
-            href="images/gallery-6.jpg"
-            className="gallery image-popup img d-flex align-items-center"
-            style={{ backgroundImage: "url(images/gallery-6.jpg)" }}
-          >
-            <div className="icon mb-4 d-flex align-items-center justify-content-center">
-              <span className="icon-instagram" />
-            </div>
-          </a>
+      <div
+        className="tab-pane fade"
+        id="v-pills-2"
+        role="tabpanel"
+        aria-labelledby="v-pills-day-2-tab"
+      >
+        <div className="p-4">
+         
+          <p>
+            On her way she met a copy. The copy warned the Little Blind Text,
+            that where it came from it would have been rewritten a thousand
+            times and everything that was left from its origin would be the word
+            "and" and the Little Blind Text should turn around and return to its
+            own, safe country. But nothing the copy said could convince her and
+            so it didn’t take long until a few insidious Copy Writers ambushed
+            her, made her drunk with Longe and Parole and dragged her into their
+            agency, where they abused her for their.
+          </p>
         </div>
       </div>
+      <div
+        className="tab-pane fade"
+        id="v-pills-3"
+        role="tabpanel"
+        aria-labelledby="v-pills-day-3-tab"
+      >
+      <div className="p-4">
+         
+      <p>
+        On her way she met a copy. The copy warned the Little Blind Text,
+        that where it came from it would have been rewritten a thousand
+        times and everything that was left from its origin would be the word
+        "and" and the Little Blind Text should turn around and return to its
+        own, safe country. But nothing the copy said could convince her and
+        so it didn’t take long until a few insidious Copy Writers ambushed
+        her, made her drunk with Longe and Parole and dragged her into their
+        agency, where they abused her for their.
+      </p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
   </section>
+ 
   <Footer/>
 </>
 

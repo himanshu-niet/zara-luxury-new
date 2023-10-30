@@ -25,7 +25,7 @@ const HomeProduct = () => {
       <div className="container">
         <div className="row justify-content-center mb-3 pb-3">
           <div className="col-md-12 heading-section text-center ">
-            <h2 className="mb-4">New Products Arrival</h2>
+            <h2 className="mb-4">New Arrival</h2>
             <p>
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia
@@ -46,7 +46,7 @@ const HomeProduct = () => {
                   <Link to={`/product/${item._id}`} className="img-prod">
                     <img
                       className="img-fluid"
-                      src={item.images.url}
+                      src={item.images[0].url}
                       alt="Colorlib Template"
                     />
                     <span className="status">{item.discount}% Off</span>
@@ -55,7 +55,7 @@ const HomeProduct = () => {
                   <div className="text py-3 pb-4 px-3">
                     <div className="d-flex">
                       <div className="cat">
-                        <span>{item.category}</span>
+                        <span>{item.category+" "+item.subCategory}</span>
                       </div>
                       <div className="rating">
                         <p className="text-right mb-0">
@@ -82,8 +82,8 @@ const HomeProduct = () => {
                     </h3>
                     <div className="pricing">
                       <p className="price">
-                        <span className="mr-2 price-dc">${item.price}</span>
-                        <span className="price-sale">${getOfferPrice(item.price, item.discount)}</span>
+                        <span className="mr-2 price-dc">₹{item.price}</span>
+                        <span className="price-sale">₹{getOfferPrice(item.price, item.discount)}</span>
                       </p>
                     </div>
                     <p className="bottom-area d-flex px-3">
@@ -119,7 +119,7 @@ const HomeProduct = () => {
                 <div className="text py-3 pb-4 px-3">
                   <div className="d-flex">
                     <div className="cat">
-                      <span>{item.category}</span>
+                    <span>{item.category+" "+item.subCategory}</span>
                     </div>
                     <div className="rating">
                       <p className="text-right mb-0">
@@ -146,7 +146,7 @@ const HomeProduct = () => {
                   </h3>
                   <div className="pricing">
                     <p className="price">
-                      <span>${item.price}</span>
+                      <span>₹{item.price}</span>
                     </p>
                   </div>
                   <p className="bottom-area d-flex px-3">

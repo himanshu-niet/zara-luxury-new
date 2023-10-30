@@ -6,6 +6,7 @@ import { useParams,Link } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../utils/config'
 import Loding from '../components/Common/Loding'
+import ProductImage from '../components/Product/ProductImage'
 
 const ProductSingle = () => {
 
@@ -13,9 +14,12 @@ const ProductSingle = () => {
 
   const [product, setProduct] = useState();
 
+  const [quantity,setQuantity]=useState(1);
+
+
   useEffect(() => {
 
-    axios.get(`${BASE_URL}/product/${productId}`)
+    axios.get(`${BASE_URL}/api/v1/product/${productId}`)
       .then((respose) => {
         setProduct(respose.data.product)
         console.log(respose.data.product)
@@ -25,6 +29,20 @@ const ProductSingle = () => {
       })
 
   }, [])
+
+
+  const plusQuantity=()=>{
+    if(quantity<product.stock){
+      setQuantity(quantity+1)
+    }
+  }
+  
+  const minusQuantity=()=>{
+    if(quantity>1){
+    setQuantity(quantity-1)
+    }
+  }
+
 
   if(!product) return <Loding/>;
 
@@ -39,14 +57,8 @@ const ProductSingle = () => {
   <section className="ftco-section">
     <div className="container">
       <div className="row">
-        <div className="col-lg-6 mb-5 ">
-          <a href={product.images.url} className="image-popup prod-img-bg">
-            <img
-              src={product.images.url}
-              className="img-fluid"
-              alt="Colorlib Template"
-            />
-          </a>
+        <div className="col-lg-6 mb-5 " >
+          <ProductImage images={product.images}/>
         </div>
         <div className="col-lg-6 product-details pl-md-5 ">
           <h3>{product.title}</h3>
@@ -83,10 +95,10 @@ const ProductSingle = () => {
             </p>
           </div>
           <p className="price">
-            <span>${product.price}</span>
+            <span>₹{product.price}</span>
           </p>
           <p>
-          {product.desc}
+          {product.detail}
           </p>
         
           <div className="row mt-4">
@@ -113,6 +125,7 @@ const ProductSingle = () => {
                   className="quantity-left-minus btn"
                   data-type="minus"
                   data-field=""
+                  onClick={minusQuantity}
                 >
                   <i className="ion-ios-remove" />
                 </button>
@@ -122,9 +135,9 @@ const ProductSingle = () => {
                 id="quantity"
                 name="quantity"
                 className="quantity form-control input-number"
-                defaultValue={1}
-                min={1}
-                max={100}
+                value={quantity}
+                disabled
+                
               />
               <span className="input-group-btn ml-2">
                 <button
@@ -132,6 +145,7 @@ const ProductSingle = () => {
                   className="quantity-right-plus btn"
                   data-type="plus"
                   data-field=""
+                  onClick={plusQuantity}
                 >
                   <i className="ion-ios-add" />
                 </button>
@@ -155,199 +169,245 @@ const ProductSingle = () => {
         </div>
       </div>
       <div className="row mt-5">
-        <div className="col-md-12 nav-link-wrap">
-          <div
-            className="nav nav-pills d-flex text-center"
-            id="v-pills-tab"
-            role="tablist"
-            aria-orientation="vertical"
+      <div className="col-md-12 nav-link-wrap">
+        <div
+          className="nav nav-pills d-flex text-center"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <a
+            className="nav-link ftco-animate active mr-lg-1"
+            id="v-pills-1-tab"
+            data-toggle="pill"
+            href="#v-pills-1"
+            role="tab"
+            aria-controls="v-pills-1"
+            aria-selected="true"
           >
-            <a
-              className="nav-link  active mr-lg-1"
-              id="v-pills-1-tab"
-              data-toggle="pill"
-              href="#v-pills-1"
-              role="tab"
-              aria-controls="v-pills-1"
-              aria-selected="true"
-            >
+            Description
+          </a>
+          <a
+            className="nav-link ftco-animate mr-lg-1"
+            id="v-pills-2-tab"
+            data-toggle="pill"
+            href="#v-pills-2"
+            role="tab"
+            aria-controls="v-pills-2"
+            aria-selected="false"
+          >
+            Manufacturer
+          </a>
+          <a
+            className="nav-link ftco-animate"
+            id="v-pills-3-tab"
+            data-toggle="pill"
+            href="#v-pills-3"
+            role="tab"
+            aria-controls="v-pills-3"
+            aria-selected="false"
+          >
             Reviews
-            </a>
-            
-          </div>
+          </a>
         </div>
-        <div className="col-md-12 tab-wrap">
-          <div className="tab-content bg-light" id="v-pills-tabContent">
-            <div
-              className="tab-pane fade show active"
-              id="v-pills-1"
-              role="tabpanel"
-              aria-labelledby="day-1-tab"
-            >
-            <div className="row p-4">
-            <div className="col-md-7">
-              <h3 className="mb-4">23 Reviews</h3>
-              <div className="review">
-                <div
-                  className="user-img"
-                  style={{ backgroundImage: "url(images/person_1.jpg)" }}
-                />
-                <div className="desc">
-                  <h4>
-                    <span className="text-left">Jacob Webb</span>
-                    <span className="text-right">14 March 2018</span>
-                  </h4>
-                  <p className="star">
-                    <span>
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                    </span>
-                    <span className="text-right">
-                      <a href="#" className="reply">
-                        <i className="icon-reply" />
-                      </a>
-                    </span>
-                  </p>
-                  <p>
-                    When she reached the first hills of the Italic
-                    Mountains, she had a last view back on the skyline of
-                    her hometown Bookmarksgrov
-                  </p>
-                </div>
-              </div>
-              <div className="review">
-                <div
-                  className="user-img"
-                  style={{ backgroundImage: "url(images/person_2.jpg)" }}
-                />
-                <div className="desc">
-                  <h4>
-                    <span className="text-left">Jacob Webb</span>
-                    <span className="text-right">14 March 2018</span>
-                  </h4>
-                  <p className="star">
-                    <span>
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                    </span>
-                    <span className="text-right">
-                      <a href="#" className="reply">
-                        <i className="icon-reply" />
-                      </a>
-                    </span>
-                  </p>
-                  <p>
-                    When she reached the first hills of the Italic
-                    Mountains, she had a last view back on the skyline of
-                    her hometown Bookmarksgrov
-                  </p>
-                </div>
-              </div>
-              <div className="review">
-                <div
-                  className="user-img"
-                  style={{ backgroundImage: "url(images/person_3.jpg)" }}
-                />
-                <div className="desc">
-                  <h4>
-                    <span className="text-left">Jacob Webb</span>
-                    <span className="text-right">14 March 2018</span>
-                  </h4>
-                  <p className="star">
-                    <span>
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                      <i className="ion-ios-star-outline" />
-                    </span>
-                    <span className="text-right">
-                      <a href="#" className="reply">
-                        <i className="icon-reply" />
-                      </a>
-                    </span>
-                  </p>
-                  <p>
-                    When she reached the first hills of the Italic
-                    Mountains, she had a last view back on the skyline of
-                    her hometown Bookmarksgrov
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="rating-wrap">
-                <h3 className="mb-4">Give a Review</h3>
-                <p className="star">
-                  <span>
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    (98%)
-                  </span>
-                  <span>20 Reviews</span>
-                </p>
-                <p className="star">
-                  <span>
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    (85%)
-                  </span>
-                  <span>10 Reviews</span>
-                </p>
-                <p className="star">
-                  <span>
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    (98%)
-                  </span>
-                  <span>5 Reviews</span>
-                </p>
-                <p className="star">
-                  <span>
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    (98%)
-                  </span>
-                  <span>0 Reviews</span>
-                </p>
-                <p className="star">
-                  <span>
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    <i className="ion-ios-star-outline" />
-                    (98%)
-                  </span>
-                  <span>0 Reviews</span>
-                </p>
-              </div>
+      </div>
+      <div className="col-md-12 tab-wrap">
+        <div className="tab-content bg-light" id="v-pills-tabContent">
+          <div
+            className="tab-pane fade show active"
+            id="v-pills-1"
+            role="tabpanel"
+            aria-labelledby="day-1-tab"
+          >
+            <div className="p-4">
+              <h3 className="mb-4">{product.title}</h3>
+              <p>
+               {product.desc}
+              </p>
             </div>
           </div>
+          <div
+            className="tab-pane fade"
+            id="v-pills-2"
+            role="tabpanel"
+            aria-labelledby="v-pills-day-2-tab"
+          >
+            <div className="p-4">
+              
+              <p>
+              {product.mfg}
+              </p>
             </div>
-           
-           
+          </div>
+          <div
+            className="tab-pane fade"
+            id="v-pills-3"
+            role="tabpanel"
+            aria-labelledby="v-pills-day-3-tab"
+          >
+            <div className="row p-4">
+              <div className="col-md-7">
+                <h3 className="mb-4">23 Reviews</h3>
+                <div className="review">
+                  <div
+                    className="user-img"
+                    style={{ backgroundImage: "url(images/person_1.jpg)" }}
+                  />
+                  <div className="desc">
+                    <h4>
+                      <span className="text-left">Jacob Webb</span>
+                      <span className="text-right">14 March 2018</span>
+                    </h4>
+                    <p className="star">
+                      <span>
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                      </span>
+                      <span className="text-right">
+                        <a href="#" className="reply">
+                          <i className="icon-reply" />
+                        </a>
+                      </span>
+                    </p>
+                    <p>
+                      When she reached the first hills of the Italic Mountains, she
+                      had a last view back on the skyline of her hometown
+                      Bookmarksgrov
+                    </p>
+                  </div>
+                </div>
+                <div className="review">
+                  <div
+                    className="user-img"
+                    style={{ backgroundImage: "url(images/person_2.jpg)" }}
+                  />
+                  <div className="desc">
+                    <h4>
+                      <span className="text-left">Jacob Webb</span>
+                      <span className="text-right">14 March 2018</span>
+                    </h4>
+                    <p className="star">
+                      <span>
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                      </span>
+                      <span className="text-right">
+                        <a href="#" className="reply">
+                          <i className="icon-reply" />
+                        </a>
+                      </span>
+                    </p>
+                    <p>
+                      When she reached the first hills of the Italic Mountains, she
+                      had a last view back on the skyline of her hometown
+                      Bookmarksgrov
+                    </p>
+                  </div>
+                </div>
+                <div className="review">
+                  <div
+                    className="user-img"
+                    style={{ backgroundImage: "url(images/person_3.jpg)" }}
+                  />
+                  <div className="desc">
+                    <h4>
+                      <span className="text-left">Jacob Webb</span>
+                      <span className="text-right">14 March 2018</span>
+                    </h4>
+                    <p className="star">
+                      <span>
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                        <i className="ion-ios-star-outline" />
+                      </span>
+                      <span className="text-right">
+                        <a href="#" className="reply">
+                          <i className="icon-reply" />
+                        </a>
+                      </span>
+                    </p>
+                    <p>
+                      When she reached the first hills of the Italic Mountains, she
+                      had a last view back on the skyline of her hometown
+                      Bookmarksgrov
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="rating-wrap">
+                  <h3 className="mb-4">Give a Review</h3>
+                  <p className="star">
+                    <span>
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      (98%)
+                    </span>
+                    <span>20 Reviews</span>
+                  </p>
+                  <p className="star">
+                    <span>
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      (85%)
+                    </span>
+                    <span>10 Reviews</span>
+                  </p>
+                  <p className="star">
+                    <span>
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      (98%)
+                    </span>
+                    <span>5 Reviews</span>
+                  </p>
+                  <p className="star">
+                    <span>
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      (98%)
+                    </span>
+                    <span>0 Reviews</span>
+                  </p>
+                  <p className="star">
+                    <span>
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      <i className="ion-ios-star-outline" />
+                      (98%)
+                    </span>
+                    <span>0 Reviews</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    
     </div>
   </section>
   <Footer/>

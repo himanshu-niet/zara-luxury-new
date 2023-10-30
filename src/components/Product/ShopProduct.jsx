@@ -4,18 +4,20 @@ import { BASE_URL } from '../../utils/config';
 import axios from 'axios';
 import Loding from '../Common/Loding';
 import { Link, useParams } from 'react-router-dom';
+import Bread from '../Common/Bread';
 
-const ShopProduct = () => {
+const ShopProduct = ({category,subCategory}) => {
 
-  const {category}=useParams();
+ 
+
 
   const [products, setProducts] = useState([]);
   const [keyword,setKeyword]=useState("");
   const [searchbtn,setSearchbtn]=useState(0);
 
   useEffect(() => {
-
-    axios.get(`${BASE_URL}/api/v1/products?keyword=${keyword}&category=${category}`)
+   
+    axios.get(`${BASE_URL}/api/v1/products?keyword=${keyword}&category=${category}&subCategory=${subCategory}`)
       .then((respose) => {
         setProducts(respose.data.products)
         console.log(respose.data.products)
@@ -29,18 +31,24 @@ const ShopProduct = () => {
   if(!products) return <Loding/>
 
   return (
+
+   
+
     <section className="ftco-section bg-light">
     <div className="container">
+    
       <div className="row">
 
       <div className='mb-4 col-12' style={{display:'flex',justifyContent:'flex-end'}}>
       
-      <form onSubmit={(e)=>{e.preventDefault(); setSearchbtn(searchbtn+1)}} className="" style={{display:'flex'}}>
-      <input className='form-control' placeholder='Search Product' type='text' onChange={(e)=>setKeyword(e.target.value)}/>
-      <button type='submit'  className=" text-center  px-3 ml-2 rounded btn btn-info">
-          Search
-      </button>
+      <form onSubmit={(e)=>{e.preventDefault(); setSearchbtn(searchbtn+1)}} className="search-form">
+      <div className="form-group">
+        <button type="submit" className="icon ion-ios-search serButton"></button>
+        <input type="text" className="form-control"  onChange={(e)=>setKeyword(e.target.value)} placeholder="Type a keyword and hit enter"/>
+      </div>
     </form>
+
+   
       </div>
 
         <div className="col-md-8 col-lg-10 order-md-last">
@@ -95,7 +103,23 @@ const ShopProduct = () => {
                   aria-multiselectable="true"
                 >
                   <div className="panel panel-default">
-                    <div className="panel-heading" role="tab" id="headingOne">
+                  
+                  <div className="panel-heading" role="tab" id="headingFive">
+                  <h4 className="panel-title">
+                        <a
+                        className="collapsed"
+                        
+                        data-parent="#accordion"
+                        aria-expanded="false"
+                        
+                          href="/products"
+                        >
+                         All Products
+                        </a>
+                      </h4>
+                    </div>
+                  
+                  <div className="panel-heading" role="tab" id="headingOne">
                       <h4 className="panel-title">
                         <a
                           data-toggle="collapse"
@@ -104,7 +128,7 @@ const ShopProduct = () => {
                           aria-expanded="true"
                           aria-controls="collapseOne"
                         >
-                          Men's 
+                          MEN'S 
                         </a>
                       </h4>
                     </div>
@@ -117,10 +141,19 @@ const ShopProduct = () => {
                       <div className="panel-body">
                         <ul>
                           <li>
-                            <Link to={"/products?category=mens shirt"}>Shirts</Link>
+                            <a href={"/products?category=mens&subCategory=shirts"}>Shirts</a>
                           </li>
                           <li>
-                          <Link to={"/products?category=mens tshirt"}>T-Shirts</Link>
+                          <a href={"/products?category=mens&subCategory=tshirts"}>T-Shirts</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=mens&subCategory=jakets"}>Jackets</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=mens&subCategory=pants"}>Pants</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=mens&subCategory=footwears"}>Footwears</a>
                           </li>
                           
                         </ul>
@@ -138,7 +171,7 @@ const ShopProduct = () => {
                           aria-expanded="false"
                           aria-controls="collapseTwo"
                         >
-                          Women's
+                          WOMEN'S
                         </a>
                       </h4>
                     </div>
@@ -151,16 +184,73 @@ const ShopProduct = () => {
                       <div className="panel-body">
                         <ul>
                           <li>
-                          <Link to={"/products?category=womens shirt"}>Shirts</Link>
+                          <a href={"/products?category=womens&subCategory=tops"}>Tops</a>
                           </li>
                           <li>
-                          <Link to={"/products?category=womens tshirt"}>T-Shirts</Link>
+                          <a href={"/products?category=womens&subCategory=outwear"}>Outwears</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=womens&subCategory=bottoms"}>Bottoms</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=womens&subCategory=dresses"}>Dresses</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=womens&subCategory=footwears"}>Footwears</a>
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </div>
+                  
+                    </div>
+
+
+                    <div className="panel panel-default">
+                    <div className="panel-heading" role="tab" id="headingFour">
+                      <h4 className="panel-title">
+                        <a
+                        className="collapsed"
+                          data-toggle="collapse"
+                          data-parent="#accordion"
+                          href="#collapseFour"
+                          aria-expanded="false"
+                          aria-controls="collapseFour"
+                        >
+                          KID'S 
+                        </a>
+                      </h4>
+                    </div>
+                    <div
+                      id="collapseFour"
+                      className="panel-collapse collapse"
+                      role="tabpanel"
+                      aria-labelledby="headingFour"
+                    >
+                      <div className="panel-body">
+                        <ul>
+                          <li>
+                            <a href={"/products?category=kids&subCategory=shirts"}>Shirts</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=kids&subCategory=tshirts"}>T-Shirts</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=kids&subCategory=jakets"}>Jackets</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=kids&subCategory=pants"}>Pants</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=kids&subCategory=footwears"}>Footwears</a>
                           </li>
                           
                         </ul>
                       </div>
                     </div>
                   </div>
+
+
                   <div className="panel panel-default">
                     <div className="panel-heading" role="tab" id="headingThree">
                       <h4 className="panel-title">
@@ -172,7 +262,7 @@ const ShopProduct = () => {
                           aria-expanded="false"
                           aria-controls="collapseThree"
                         >
-                          Locks
+                        ACCESSORIES
                         </a>
                       </h4>
                     </div>
@@ -185,16 +275,24 @@ const ShopProduct = () => {
                       <div className="panel-body">
                         <ul>
                           <li>
-                          <Link to={"/products?category=lock indoor"}>Indoor Locks</Link>
+                          <a href={"/products?category=accessories&subCategory=mens accessories"}>Mens Accessories</a>
                           </li>
                           <li>
-                          <Link to={"/products?category=lock digital"}>Digital Locks</Link>
+                          <a href={"/products?category=accessories&subCategory=mens wallets"}>Mens Wallets</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=accessories&subCategory=womens jewellery"}>Womens Jewellery</a>
+                          </li>
+                          <li>
+                          <a href={"/products?category=accessories&subCategory=womens handbags and purses"}>Womens Handbags & Purses</a>
                           </li>
                          
                         </ul>
                       </div>
                     </div>
                   </div>
+
+                
                   
                 </div>
               </div>

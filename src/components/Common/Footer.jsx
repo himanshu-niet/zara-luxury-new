@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -16,23 +17,22 @@ const Footer = () => {
       <div className="row mb-5">
         <div className="col-md">
           <div className="ftco-footer-widget mb-4">
-            <h2 className="ftco-heading-2">Minishop</h2>
+            <h2 className="ftco-heading-2">Zara Luxury</h2>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia.
+            Shop, Slay, Repeat.
             </p>
             <ul className="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-              <li className="ftco-animate">
+              <li className=" icon-hover">
                 <a href="#">
-                  <span className="icon-twitter" />
+                  <span className="icon-youtube" />
                 </a>
               </li>
-              <li className="ftco-animate">
+              <li className=" icon-hover">
                 <a href="#">
                   <span className="icon-facebook" />
                 </a>
               </li>
-              <li className="ftco-animate">
+              <li className=" icon-hover">
                 <a href="#">
                   <span className="icon-instagram" />
                 </a>
@@ -45,24 +45,24 @@ const Footer = () => {
             <h2 className="ftco-heading-2">Menu</h2>
             <ul className="list-unstyled">
               <li>
-                <a href="#" className="py-2 d-block">
-                  Shop
-                </a>
+              <Link to={"/"} className="py-2 d-block">
+                  Home
+                </Link>
               </li>
               <li>
-                <a href="#" className="py-2 d-block">
+              <Link to={"/about"} className="py-2 d-block">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="py-2 d-block">
-                  Journal
-                </a>
+              <Link to={"/products"} className="py-2 d-block">
+                  Shop
+                </Link>
               </li>
               <li>
-                <a href="#" className="py-2 d-block">
+              <Link to={"/contact"} className="py-2 d-block">
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -72,39 +72,28 @@ const Footer = () => {
             <h2 className="ftco-heading-2">Help</h2>
             <div className="d-flex">
               <ul className="list-unstyled mr-l-5 pr-l-3 mr-4">
+              <li>
+              <Link to={"/"} className="py-2 d-block">
+                FAQs
+              </Link>
+            </li>
                 <li>
-                  <a href="#" className="py-2 d-block">
-                    Shipping Information
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="py-2 d-block">
+                  <Link to={"/"} className="py-2 d-block">
                     Returns &amp; Exchange
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="py-2 d-block">
+                <Link to={"/"} className="py-2 d-block">
                     Terms &amp; Conditions
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="py-2 d-block">
+                  <Link to={"/"} className="py-2 d-block">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
               </ul>
-              <ul className="list-unstyled">
-                <li>
-                  <a href="#" className="py-2 d-block">
-                    FAQs
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="py-2 d-block">
-                    Contact
-                  </a>
-                </li>
-              </ul>
+             
             </div>
           </div>
         </div>
@@ -122,7 +111,7 @@ const Footer = () => {
                 <li>
                   <a href="#">
                     <span className="icon icon-phone" />
-                    <span className="text">+2 392 3929 210</span>
+                    <span className="text">+91 123456789</span>
                   </a>
                 </li>
                 <li>
@@ -140,10 +129,10 @@ const Footer = () => {
         <div className="col-md-12 text-center">
           <p>
             {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-            Copyright © All rights reserved | This template is made with{" "}
-            <i className="icon-heart color-danger" aria-hidden="true" /> by{" "}
-            <a href="https://colorlib.com" target="_blank">
-              Colorlib
+            Copyright © 2023 Zara Luxury. All rights reserved | Develoved
+           by{" "}
+            <a href="https://cybronical.com/" target="_blank">
+            Cybronical India Pvt. Ltd
             </a>
             {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
           </p>

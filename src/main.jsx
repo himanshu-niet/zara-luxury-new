@@ -14,6 +14,9 @@ import Products from './pages/products.jsx';
 import ProductSingle from './pages/productSingle.jsx';
 import Cart from './pages/cart.jsx';
 import Checkout from './pages/checkout.jsx';
+import Thank from './pages/thank';
+import Login from './pages/login';
+import Register from './pages/register';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +48,18 @@ const router = createBrowserRouter([
   {
     path: "/checkout",
     element: <Checkout/>
+  },
+  {
+    path: "/thanks",
+    element: <Thank/>
+  },
+  {
+    path: "/login",
+    element: <Login/>
+  },
+  {
+    path: "/register",
+    element: <Register/>
   },
  
 ]);
