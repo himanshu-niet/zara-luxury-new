@@ -215,7 +215,7 @@ const Index = () => {
                     <span className="flaticon-customer-service" />
                   </div>
                   <div className="text">
-                    <h3>24*7 Customer Support</h3>
+                    <h3>24x7 Customer Support</h3>
                     <p className="mb-0">
                       Separated they live in. A small river named Duden flows
                     </p>

@@ -52,7 +52,10 @@ const About = () => {
         </div>
       </div>
 
-      <div className="row mt-5">
+
+    
+
+      <div className="row mt-5 about bg-white p-5">
   <div className="col-md-12 nav-link-wrap">
     <div
       className="nav nav-pills d-flex text-center"
@@ -61,7 +64,7 @@ const About = () => {
       aria-orientation="vertical"
     >
       <a
-        className="nav-link ftco-animate active mr-lg-1"
+        className="nav-link  active mr-lg-1"
         id="v-pills-1-tab"
         data-toggle="pill"
         href="#v-pills-1"
@@ -72,7 +75,7 @@ const About = () => {
         Vision
       </a>
       <a
-        className="nav-link ftco-animate mr-lg-1"
+        className="nav-link mr-lg-1"
         id="v-pills-2-tab"
         data-toggle="pill"
         href="#v-pills-2"
@@ -83,7 +86,7 @@ const About = () => {
       Mission
       </a>
       <a
-        className="nav-link ftco-animate"
+        className="nav-link"
         id="v-pills-3-tab"
         data-toggle="pill"
         href="#v-pills-3"
@@ -96,7 +99,7 @@ const About = () => {
     </div>
   </div>
   <div className="col-md-12 tab-wrap">
-    <div className="tab-content bg-light" id="v-pills-tabContent">
+    <div className="tab-content " id="v-pills-tabContent">
       <div
         className="tab-pane fade show active"
         id="v-pills-1"

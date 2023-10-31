@@ -50,7 +50,7 @@ const Hero = () => {
               <div className="text">
                 <span className="subheading">#New Arrival</span>
                 <div className="horizontal">
-                  <h1 className="mb-4 mt-3">Womens Collection </h1>
+                  <h1 className="mb-4 mt-3">Women's Collection </h1>
                   <p className="mb-4">
                     A small river named Duden flows by their place and supplies it
                     with the necessary regelialia. It is a paradisematic country.
@@ -87,7 +87,7 @@ const Hero = () => {
                       <div className="text">
                         <span className="subheading">#New Arrival</span>
                         <div className="horizontal">
-                          <h1 className="mb-4 mt-3">Mens Winter Collection</h1>
+                          <h1 className="mb-4 mt-3">Men's Winter Collection</h1>
                           <p className="mb-4">
                             A small river named Duden flows by their place and supplies it
                             with the necessary regelialia. It is a paradisematic country.

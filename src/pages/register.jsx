@@ -94,7 +94,7 @@ const Register = () => {
      
       <div className="media-options">
         <a href="#" className="field google">
-          <img src="#" alt="" className="google-img" />
+          <img src="images/google.png" alt="" className="google-img" />
           <span>Login with Google</span>
         </a>
       </div>

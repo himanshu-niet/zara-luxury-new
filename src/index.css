@@ -104,8 +104,6 @@ h1 {
 
 
 
-/* Google Fonts - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 
 .container-login{
@@ -270,3 +268,40 @@ a.google span{
     }
     
 }
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* not active */
+.about .nav-pills .nav-link:not(.active) {
+    background-color:white!important;
+    color: '#dbcc8f'!important;
+}
+
+/* active*/
+.about .nav-pills .nav-link {
+   background-color: '#dbcc8f';
+   padding: 0px 0px !important;
+   
+}
+
+.about .nav-pills .nav-link:after {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    width: 0;
+    content: '';
+    height: 0;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+   
+    opacity: 0; }
+
+
+  .about  .nav-pills .nav-link:hover {
+        color: black!important; 
+    }

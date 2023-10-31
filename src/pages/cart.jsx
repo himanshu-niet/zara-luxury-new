@@ -172,7 +172,7 @@ const Cart = () => {
             </p>
           </div>
           <p className="text-center">
-            <a href="checkout.html" className="btn btn-primary py-3 px-4">
+            <a href="/checkout" className="btn btn-primary py-3 px-4">
               Proceed to Checkout
             </a>
           </p>

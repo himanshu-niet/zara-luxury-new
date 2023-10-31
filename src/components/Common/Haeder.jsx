@@ -93,11 +93,20 @@ const Haeder = () => {
                   Contact
                 </Link >
               </li>
+              
               <li className="nav-item">
                 <Link to="/order" className="nav-link">
                   Orders
                 </Link >
               </li>
+              <li className="nav-item ">
+              {cookie?<a style={{cursor:'pointer'}} className="nav-link" onClick={logout}>Logout</a>:<Link to="/login" className="nav-link">
+              Login
+            </Link >}
+              </li>
+
+              
+
               <li className="nav-item cta cta-colored">
                 <Link to="/cart" className="nav-link">
                   <span className="icon-shopping_cart" />
@@ -107,16 +116,13 @@ const Haeder = () => {
 
               
 
-              <li className="nav-item cta cta-colored">
-              {cookie?<a style={{cursor:'pointer'}} className="nav-link" onClick={logout}>Logout</a>:<Link to="/login" className="nav-link">
-              Login
-            </Link >}
-              </li>
+            
 
             </ul>
           </div>
         </div>
       </nav>
+
     </>
   )
 }

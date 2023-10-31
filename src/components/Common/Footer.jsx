@@ -129,7 +129,7 @@ const Footer = () => {
         <div className="col-md-12 text-center">
           <p>
             {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-            Copyright © 2023 Zara Luxury. All rights reserved | Develoved
+            Copyright © 2023 Zara Luxury. All rights reserved | Developed
            by{" "}
             <a href="https://cybronical.com/" target="_blank">
             Cybronical India Pvt. Ltd

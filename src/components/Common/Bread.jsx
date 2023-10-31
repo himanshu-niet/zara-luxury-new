@@ -5,7 +5,7 @@ const Bread = ({page}) => {
   return (
     <div
     className="hero-wrap hero-bread"
-    style={{ backgroundImage: 'url("images/bg_6.jpg")' }}
+   
   >
     <div className="container">
       <div className="row no-gutters slider-text align-items-center justify-content-center">

@@ -24,14 +24,13 @@ const Login = () => {
             axios.post(`${BASE_URL}`+'/api/v1/login', values)
               .then(function (response) {
                 const data=response.data;
-                alert("login Successfully")
-                
+             
                 setCookie("userToken", data.token,10);
                 location.href="/cart";
               })
               .catch(function (error) {
+                
                 alert("Enter Correct Email or Password..")
-
               });
         },
       });
@@ -85,10 +84,10 @@ const Login = () => {
       <div className="line" />
      
       <div className="media-options">
-        <a href="#" className="field google">
-        <i className="bx bxl-google google-icon text-red" />
-          <span>Login with Google</span>
-        </a>
+      <a href="#" className="field google">
+      <img src="images/google.png" alt="" className="google-img" />
+      <span>Login with Google</span>
+    </a>
       </div>
     </div>
     {/* Signup Form */}
