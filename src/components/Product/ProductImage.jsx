@@ -9,9 +9,9 @@ const ProductImage = ({images}) => {
       }));
 
   return (
-    
-    <Carousel style={{maxHeight:'500px'}} images={image} isMaximized={false} hasMediaButton={false} hasSizeButton={false} hasIndexBoard={false}  />
-   
+
+   <Carousel style={{maxHeight:'500px',background:'tranparent'}} isAutoPlaying={true} autoPlayInterval={2000} images={image} isMaximized={false} hasMediaButton={false} hasSizeButton={false} hasIndexBoard={false}  />
+
    
   )
 }

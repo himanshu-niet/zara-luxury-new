@@ -259,7 +259,7 @@ const Index = () => {
                         </span>
                       </div>
                       <div className="text">
-                        <p className="mb-4 pl-4 line">
+                        <p className="mb-4 pl-4">
                           Far far away, behind the word mountains, far from the
                           countries Vokalia and Consonantia, there live the blind
                           texts.
@@ -280,7 +280,7 @@ const Index = () => {
                         </span>
                       </div>
                       <div className="text">
-                        <p className="mb-4 pl-4 line">
+                        <p className="mb-4 pl-4 ">
                           Far far away, behind the word mountains, far from the
                           countries Vokalia and Consonantia, there live the blind
                           texts.
@@ -301,7 +301,7 @@ const Index = () => {
                         </span>
                       </div>
                       <div className="text">
-                        <p className="mb-4 pl-4 line">
+                        <p className="mb-4 pl-4 ">
                           Far far away, behind the word mountains, far from the
                           countries Vokalia and Consonantia, there live the blind
                           texts.
@@ -322,7 +322,7 @@ const Index = () => {
                         </span>
                       </div>
                       <div className="text">
-                        <p className="mb-4 pl-4 line">
+                        <p className="mb-4 pl-4 ">
                           Far far away, behind the word mountains, far from the
                           countries Vokalia and Consonantia, there live the blind
                           texts.
@@ -343,7 +343,7 @@ const Index = () => {
                         </span>
                       </div>
                       <div className="text">
-                        <p className="mb-4 pl-4 line">
+                        <p className="mb-4 pl-4 ">
                           Far far away, behind the word mountains, far from the
                           countries Vokalia and Consonantia, there live the blind
                           texts.
