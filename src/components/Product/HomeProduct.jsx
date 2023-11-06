@@ -12,7 +12,7 @@ const HomeProduct = () => {
     axios.get(`${BASE_URL}/api/v1/products`)
       .then((respose) => {
         setProducts(respose.data.products)
-        console.log(respose.data.products)
+       
       })
       .catch((error) => {
         console.log(error)

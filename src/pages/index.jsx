@@ -21,7 +21,7 @@ const Index = () => {
   return (
     <>
       <Haeder />
-      {/* END nav */}
+    
       <Hero/>
 
 

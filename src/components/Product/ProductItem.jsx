@@ -2,8 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { getOfferPrice } from '../../utils/config';
 
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../utils/cartSlice';
+
 
 const ProductItem = ({ item }) => {
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(item));
+  };
 
   if (item.discount > 0) return (
     <div className="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
@@ -41,11 +50,11 @@ const ProductItem = ({ item }) => {
           </div>
           <p className="bottom-area d-flex px-3">
           
-          <Link to={`/product/${item._id}`} className="add-to-cart text-center py-2 mr-1">
+          <a style={{cursor:'pointer'}} onClick={handleAddToCart} className="add-to-cart text-center py-2 mr-1">
           <span>
             Add to cart <i className="ion-ios-add ml-1" />
           </span>
-        </Link>
+        </a>
 
         <Link to={`/product/${item._id}`} className="buy-now text-center py-2">
           Buy now

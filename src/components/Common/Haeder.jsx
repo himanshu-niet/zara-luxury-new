@@ -2,8 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom/dist'
 import { deleteCookie, getCookie } from '../../utils/cookies';
 import Loding from './Loding';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart ,calculateTotalAmount} from '../../utils/cartSlice';
+
+
+
 
 const Haeder = () => {
+  const cart = useSelector((state) => state.cart.items);
+
   const cookie=getCookie("userToken");
 
   const logout=()=>{
@@ -101,7 +108,7 @@ const Haeder = () => {
               <li className="nav-item cta cta-colored">
                 <Link to="/cart" className="nav-link">
                   <span className="icon-shopping_cart" />
-                  [0]
+                  [{cart.length}]
                 </Link >
               </li>
 
