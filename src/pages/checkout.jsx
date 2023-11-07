@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Footer from '../components/Common/Footer'
 import Haeder from '../components/Common/Haeder'
 import Bread from '../components/Common/Bread'
@@ -10,9 +10,19 @@ import {BASE_URL} from '../utils/config'
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart ,calculateTotalAmount} from '../utils/cartSlice';
+import { getCookie } from '../utils/cookies';
 
 
 const Checkout = () => {
+
+  const cookie=getCookie("userToken");
+ 
+ useEffect(()=>{
+  if(!cookie){
+    window.location.href="/login";
+     return <Loding/>
+   }
+ },[])
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);

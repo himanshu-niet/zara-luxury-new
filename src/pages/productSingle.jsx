@@ -7,8 +7,18 @@ import axios from 'axios'
 import { BASE_URL } from '../utils/config'
 import Loding from '../components/Common/Loding'
 import ProductImage from '../components/Product/ProductImage'
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart ,calculateTotalAmount} from '../utils/cartSlice';
+
+
 
 const ProductSingle = () => {
+
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.items);
+
+
+ 
 
   const {productId}=useParams();
 
@@ -34,15 +44,23 @@ const ProductSingle = () => {
   const plusQuantity=()=>{
     if(quantity<product.stock){
       setQuantity(quantity+1)
+      dispatch(increaseQuantity(product._id))
+      
+
     }
   }
   
   const minusQuantity=()=>{
     if(quantity>1){
     setQuantity(quantity-1)
+    dispatch(decreaseQuantity(product._id))
     }
   }
 
+  const handleAddToCart = () => {
+    dispatch(addToCart({...product,quantity}));
+    alert("Product Added To Cart")
+  };
 
   if(!product) return <Loding/>;
 
@@ -135,7 +153,7 @@ const ProductSingle = () => {
                 id="quantity"
                 name="quantity"
                 className="quantity form-control input-number"
-                value={quantity}
+                value={(cart.find((item) => item._id === product._id)?.quantity)?(cart.find((item) => item._id === product._id).quantity):quantity}
                 disabled
                 
               />
@@ -159,9 +177,9 @@ const ProductSingle = () => {
             </div>
           </div>
           <p>
-            <Link to={`/product/${product._id}`} className="btn btn-black py-3 px-5 mr-2">
+            <a style={{cursor:'pointer'}} onClick={handleAddToCart} className="btn btn-black py-3 px-5 mr-2">
               Add to Cart
-            </Link>
+            </a>
             <Link to={`/cart`}  className="btn btn-primary py-3 px-5">
               Buy now
             </Link>

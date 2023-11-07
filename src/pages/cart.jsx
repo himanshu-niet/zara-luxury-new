@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart ,calculateTotalAmount,calculateDiscountAmount} from '../utils/cartSlice';
+import { addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart ,calculateTotalAmount} from '../utils/cartSlice';
 
 
 
@@ -20,11 +20,10 @@ const Cart = () => {
 
   React.useEffect(() => {
     dispatch(calculateTotalAmount());
-    dispatch(calculateDiscountAmount());
+
   }, [dispatch, cart]);
 
   const totalAmount = useSelector((state) => state.cart.totalAmount); // Updated to get totalAmount
-  const discountAmount = useSelector((state) => state.cart.discountAmount); // Updated to get totalAmount
 
  
   
