@@ -19,6 +19,12 @@ import Login from './pages/login';
 import Register from './pages/register';
 import { Provider } from 'react-redux';
 import store from './utils/store';
+import Faq from './pages/faq';
+import Policy from './pages/policy';
+import Term from './pages/term';
+import Return from './pages/return';
+import Refund from './pages/refund';
+import Shipping from './pages/shipping';
 
 
 const router = createBrowserRouter([
@@ -64,6 +70,31 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register/>
   },
+  {
+    path: "/faq",
+    element: <Faq/>
+  },
+  {
+    path: "/policy",
+    element: <Policy/>
+  },
+  {
+    path: "/term",
+    element: <Term/>
+  },
+  {
+    path: "/return",
+    element: <Return/>
+  },
+  {
+    path: "/refund",
+    element: <Refund/>
+  },
+  {
+    path: "/shipping",
+    element: <Shipping/>
+  },
+
  
 ]);
 

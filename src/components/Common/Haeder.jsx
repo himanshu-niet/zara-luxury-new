@@ -26,17 +26,17 @@ const Haeder = () => {
                   <div className="icon mr-2 d-flex justify-content-center align-items-center">
                     <span className="icon-phone2" />
                   </div>
-                  <span className="text">+91 1234567890</span>
+                  <span className="text">+91 999-7718-844</span>
                 </div>
                 <div className="col-md pr-4 d-flex topper align-items-center">
                   <div className="icon mr-2 d-flex justify-content-center align-items-center">
                     <span className="icon-paper-plane" />
                   </div>
-                  <span className="text">youremail@email.com</span>
+                  <span className="text">zaraluxuryhelp@gmail.com</span>
                 </div>
                 <div className="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
                   <span className="text">
-                    3-5 Business days delivery &amp; Free Returns
+                  Swift Delivery and Hassle-Free Returns
                   </span>
                 </div>
               </div>

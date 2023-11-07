@@ -44,8 +44,8 @@ const Deal = () => {
                               <a href="#">Nike Free RN 2019 iD</a>
                           </h2>
                           <p className="price">
-                              <span className="mr-2 price-dc">$120.00</span>
-                              <span className="price-sale">$80.00</span>
+                              <span className="mr-2 price-dc">₹120.00</span>
+                              <span className="price-sale">₹80.00</span>
                           </p>
                           <ul className="thumb-deal d-flex mt-4">
                               <li
@@ -80,8 +80,8 @@ const Deal = () => {
                               <a href="#">Nike Free RN 2019 iD</a>
                           </h2>
                           <p className="price">
-                              <span className="mr-2 price-dc">$120.00</span>
-                              <span className="price-sale">$80.00</span>
+                              <span className="mr-2 price-dc">₹120.00</span>
+                              <span className="price-sale">₹80.00</span>
                           </p>
                           <ul className="thumb-deal d-flex mt-4">
                               <li

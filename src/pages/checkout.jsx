@@ -10,6 +10,8 @@ import {BASE_URL} from '../utils/config'
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart ,calculateTotalAmount} from '../utils/cartSlice';
+
+
 import { getCookie } from '../utils/cookies';
 
 

@@ -17,14 +17,16 @@ const ShopProduct = ({category,subCategory}) => {
 
   useEffect(() => {
    
-    axios.get(`${BASE_URL}/api/v1/products?keyword=${keyword}&category=${category}&subCategory=${subCategory}`)
+   const res= axios.get(`${BASE_URL}/api/v1/products?keyword=${keyword}&category=${category}&subCategory=${subCategory}`)
       .then((respose) => {
         setProducts(respose.data.products)
-        console.log(respose.data.products)
+        console.log(respose)
       })
       .catch((error) => {
         console.log(error)
       })
+
+      
 
   }, [searchbtn])
 

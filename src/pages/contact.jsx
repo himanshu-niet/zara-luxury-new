@@ -18,15 +18,14 @@ const Contact = () => {
         <div className="col-md-4 d-flex">
           <div className="info bg-white p-4">
             <p>
-              <span className='font-weight-bold'>Address:</span> 198 West 21th Street, Suite 721 New York NY
-              10016
+              <span className='font-weight-bold'>Address:</span> 	G-35, Industrial Area, Anupshahar road, Aligarh, 202002.
             </p>
           </div>
         </div>
         <div className="col-md-4 d-flex">
           <div className="info bg-white p-4">
             <p>
-              <span  className='font-weight-bold'>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a>
+              <span  className='font-weight-bold'>Phone:</span> <a href="tel://1234567920">+91 999-7718-844</a>
             </p>
           </div>
         </div>
@@ -34,7 +33,7 @@ const Contact = () => {
           <div className="info bg-white p-4">
             <p>
               <span  className='font-weight-bold'>Email:</span>{" "}
-              <a href="mailto:info@yoursite.com">info@yoursite.com</a>
+              <a href="mailto:info@yoursite.com">ZARALUXURYHELP@GMAIL.COM</a>
             </p>
           </div>
         </div>

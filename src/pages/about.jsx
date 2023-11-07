@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
-    <>
+    <div className='bg-light'>
     <Haeder/>
     <Bread page={"About Us"}/>
   
@@ -55,7 +55,7 @@ const About = () => {
 
     
 
-      <div className="row mt-5 about bg-white p-5">
+      <div className="row mt-5 about bg-white p-5 mb-5">
   <div className="col-md-12 nav-link-wrap">
     <div
       className="nav nav-pills d-flex text-center"
@@ -98,7 +98,7 @@ const About = () => {
       </a>
     </div>
   </div>
-  <div className="col-md-12 tab-wrap">
+  <div className="col-md-12 tab-wrap ">
     <div className="tab-content " id="v-pills-tabContent">
       <div
         className="tab-pane fade show active"
@@ -146,7 +146,7 @@ const About = () => {
         role="tabpanel"
         aria-labelledby="v-pills-day-3-tab"
       >
-      <div className="p-4">
+      <div className="p-4 ">
          
       <p>
         On her way she met a copy. The copy warned the Little Blind Text,
@@ -168,7 +168,7 @@ const About = () => {
   </section>
  
   <Footer/>
-</>
+</div>
 
   )
 }

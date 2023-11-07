@@ -12,6 +12,8 @@ const ProductItem = ({ item }) => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(item));
+    alert("Product Added To Cart")
+    
   };
 
 

@@ -11,7 +11,7 @@ const Bread = ({page}) => {
       <div className="row no-gutters slider-text align-items-center justify-content-center">
         <div className="col-md-9  text-center">
         
-          <h1 className="mb-0 bread">{page}</h1>
+          <h1 className="mb-0 bread"><u>{page}</u></h1>
         </div>
       </div>
     </div>

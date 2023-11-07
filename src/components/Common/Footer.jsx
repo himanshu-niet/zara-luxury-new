@@ -60,10 +60,21 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+              <Link to={"/cart"} className="py-2 d-block">
+                  Cart
+                </Link>
+              </li>
+              <li>
+              <Link to={"/checkout"} className="py-2 d-block">
+                  Checkout
+                </Link>
+              </li>
+              <li>
               <Link to={"/contact"} className="py-2 d-block">
                   Contact Us
                 </Link>
               </li>
+             
             </ul>
           </div>
         </div>
@@ -73,23 +84,35 @@ const Footer = () => {
             <div className="d-flex">
               <ul className="list-unstyled mr-l-5 pr-l-3 mr-4">
               <li>
-              <Link to={"/"} className="py-2 d-block">
+              <Link to={"/faq"} className="py-2 d-block">
                 FAQs
               </Link>
             </li>
+            <li>
+            <Link to={"/term"} className="py-2 d-block">
+                Terms &amp; Conditions
+              </Link>
+            </li>
+            <li>
+                  <Link to={"/policy"} className="py-2 d-block">
+                    Privacy Policy
+                  </Link>
+                </li>
                 <li>
-                  <Link to={"/"} className="py-2 d-block">
+                  <Link to={"/return"} className="py-2 d-block">
                     Returns &amp; Exchange
                   </Link>
                 </li>
+               
+                
                 <li>
-                <Link to={"/"} className="py-2 d-block">
-                    Terms &amp; Conditions
+                  <Link to={"/refund"} className="py-2 d-block">
+                    Cancellation and Refund
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/"} className="py-2 d-block">
-                    Privacy Policy
+                <Link to={"/shipping"} className="py-2 d-block">
+                    Shipping and Delivery
                   </Link>
                 </li>
               </ul>
@@ -105,19 +128,19 @@ const Footer = () => {
                 <li>
                   <span className="icon icon-map-marker" />
                   <span className="text">
-                    203 Fake St. Mountain View, San Francisco, California, USA
+                    G-35, Industrial Area, Anupshahar road, Aligarh, 202002.
                   </span>
                 </li>
                 <li>
                   <a href="#">
                     <span className="icon icon-phone" />
-                    <span className="text">+91 123456789</span>
+                    <span className="text">+91 999-7718-844</span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
                     <span className="icon icon-envelope" />
-                    <span className="text">info@yourdomain.com</span>
+                    <span className="text">zaraluxuryhelp@gmail.com</span>
                   </a>
                 </li>
               </ul>

@@ -2,14 +2,28 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { BASE_URL, getOfferPrice } from '../../utils/config'
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../utils/cartSlice';
+
+
 
 const HomeProduct = () => {
 
   const [products, setProducts] = useState([]);
 
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
+    alert("Product Added To Cart")
+
+  };
+
+  
+
   useEffect(() => {
 
-    axios.get(`${BASE_URL}/api/v1/products`)
+    axios.get(`${BASE_URL}/api/v1/products?keyword=&category=null&subCategory=null`)
       .then((respose) => {
         setProducts(respose.data.products)
         console.log(respose.data.products)
@@ -25,10 +39,9 @@ const HomeProduct = () => {
       <div className="container">
         <div className="row justify-content-center mb-3 pb-3">
           <div className="col-md-12 heading-section text-center ">
-            <h2 className="mb-4">New Arrival</h2>
+            <h2 className="mb-4">Fresh Drops</h2>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia
+            Fresh arrivals for the fashion-forward you, explore what's new now.
             </p>
           </div>
         </div>
@@ -88,11 +101,11 @@ const HomeProduct = () => {
                     </div>
                     <p className="bottom-area d-flex px-3">
 
-                      <Link to={`/product/${item._id}`} className="add-to-cart text-center py-2 mr-1">
+                      <a  style={{cursor:'pointer'}} onClick={()=>handleAddToCart(item)} className="add-to-cart text-center py-2 mr-1">
                         <span>
                           Add to cart <i className="ion-ios-add ml-1" />
                         </span>
-                      </Link>
+                      </a>
 
                       <Link to={`/product/${item._id}`} className="buy-now text-center py-2">
                         Buy now

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../components/Common/Footer'
 import Haeder from '../components/Common/Haeder'
 import Bread from '../components/Common/Bread'
-import { useParams,Link } from 'react-router-dom'
+import { useParams,Link,useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../utils/config'
 import Loding from '../components/Common/Loding'
@@ -13,6 +13,8 @@ import { addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCar
 
 
 const ProductSingle = () => {
+
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);
@@ -60,6 +62,12 @@ const ProductSingle = () => {
   const handleAddToCart = () => {
     dispatch(addToCart({...product,quantity}));
     alert("Product Added To Cart")
+  };
+
+  const handleBuyNow = () => {
+    dispatch(addToCart({...product}));
+    navigate("/checkout");
+    
   };
 
   if(!product) return <Loding/>;
@@ -180,9 +188,9 @@ const ProductSingle = () => {
             <a style={{cursor:'pointer'}} onClick={handleAddToCart} className="btn btn-black py-3 px-5 mr-2">
               Add to Cart
             </a>
-            <Link to={`/cart`}  className="btn btn-primary py-3 px-5">
+            <a onClick={handleBuyNow} className="btn btn-primary py-3 px-5">
               Buy now
-            </Link>
+            </a>
           </p>
         </div>
       </div>
