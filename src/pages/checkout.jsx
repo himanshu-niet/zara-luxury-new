@@ -3,7 +3,52 @@ import Footer from '../components/Common/Footer'
 import Haeder from '../components/Common/Haeder'
 import Bread from '../components/Common/Bread'
 
+import { useFormik } from 'formik';
+import Loding from '../components/Common/Loding';
+import axios from 'axios';
+import {BASE_URL} from '../utils/config'
+
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart ,calculateTotalAmount} from '../utils/cartSlice';
+
+
 const Checkout = () => {
+
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.items);
+
+  React.useEffect(() => {
+    dispatch(calculateTotalAmount());
+  }, [dispatch, cart]);
+
+  const totalAmount = useSelector((state) => state.cart.totalAmount); // Updated to get totalAmount
+
+
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName:"",
+      country:"",
+      address:"",
+      city:"",
+      pincode:"",
+      phone:""
+    },
+    onSubmit: (values) => {  
+      console.log(values)
+        // axios.post(`${BASE_URL}`+'/api/v1/order', values)
+        //   .then(function (response) {
+        //     const data=response.data;
+        //     alert("Order Created Successfully")
+            
+        //   })
+        //   .catch(function (error) {
+        //     alert("Something Went Wrong...")
+
+        //   });
+    },
+  });
+
   return (
     <>
 
@@ -15,19 +60,26 @@ const Checkout = () => {
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-xl-10 ">
-          <form action="#" className="billing-form">
+          <form onSubmit={formik.handleSubmit} className="billing-form">
             <h3 className="mb-4 billing-heading">Billing Details</h3>
             <div className="row align-items-end">
               <div className="col-md-6">
                 <div className="form-group">
                   <label htmlFor="firstname">Firt Name</label>
-                  <input type="text" className="form-control" placeholder="" />
+                  <input type="text" className="form-control" placeholder="" 
+                  onChange={formik.handleChange}
+                  name='firstName'
+                  
+                  />
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="form-group">
                   <label htmlFor="lastname">Last Name</label>
-                  <input type="text" className="form-control" placeholder="" />
+                  <input type="text" className="form-control" placeholder="" 
+                  onChange={formik.handleChange}
+                  name='lastName'
+                  />
                 </div>
               </div>
               <div className="w-100" />
@@ -35,66 +87,68 @@ const Checkout = () => {
                 <div className="form-group">
                   <label htmlFor="country">State / Country</label>
                   <div className="select-wrap">
-                    <div className="icon">
-                      <span className="ion-ios-arrow-down" />
-                    </div>
-                    <select name="" id="" className="form-control">
-                      <option value="">France</option>
-                      <option value="">Italy</option>
-                      <option value="">Philippines</option>
-                      <option value="">South Korea</option>
-                      <option value="">Hongkong</option>
-                      <option value="">Japan</option>
-                    </select>
+                  <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Country"
+                  onChange={formik.handleChange}
+                name='country'
+                
+                />
                   </div>
                 </div>
               </div>
               <div className="w-100" />
-              <div className="col-md-6">
+              <div className="col-md-12">
                 <div className="form-group">
                   <label htmlFor="streetaddress">Street Address</label>
                   <input
                     type="text"
                     className="form-control"
                     placeholder="House number and street name"
+                    onChange={formik.handleChange}
+                  name='address'
+                  
                   />
                 </div>
               </div>
-              <div className="col-md-6">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Appartment, suite, unit etc: (optional)"
-                  />
-                </div>
-              </div>
+             
               <div className="w-100" />
               <div className="col-md-6">
                 <div className="form-group">
                   <label htmlFor="towncity">Town / City</label>
-                  <input type="text" className="form-control" placeholder="" />
+                  <input type="text" className="form-control" placeholder="" onChange={formik.handleChange}
+                  name='city'
+                  />
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="form-group">
                   <label htmlFor="postcodezip">Postcode / ZIP *</label>
-                  <input type="text" className="form-control" placeholder="" />
+                  <input type="text" className="form-control" placeholder=""  onChange={formik.handleChange}
+                  name='pincode'
+                  />
                 </div>
               </div>
               <div className="w-100" />
               <div className="col-md-6">
                 <div className="form-group">
                   <label htmlFor="phone">Phone</label>
-                  <input type="text" className="form-control" placeholder="" />
+                  <input type="text" className="form-control" placeholder="" onChange={formik.handleChange}
+                  name='phone'
+                   />
                 </div>
               </div>
+
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="emailaddress">Email Address</label>
-                  <input type="text" className="form-control" placeholder="" />
+                <button type='submit' className="btn btn-primary py-3 px-4">
+                Update Address
+              </button>
                 </div>
               </div>
+              
+              
               <div className="w-100" />
              
             </div>
@@ -106,20 +160,17 @@ const Checkout = () => {
                 <h3 className="billing-heading mb-4">Cart Total</h3>
                 <p className="d-flex">
                   <span>Subtotal</span>
-                  <span>₹20.60</span>
+                  <span>₹{totalAmount}</span>
                 </p>
                 <p className="d-flex">
                   <span>Delivery</span>
                   <span>₹0.00</span>
                 </p>
-                <p className="d-flex">
-                  <span>Discount</span>
-                  <span>₹3.00</span>
-                </p>
+                
                 <hr />
                 <p className="d-flex total-price">
                   <span>Total</span>
-                  <span>₹17.60</span>
+                  <span>₹{totalAmount}</span>
                 </p>
               </div>
             </div>

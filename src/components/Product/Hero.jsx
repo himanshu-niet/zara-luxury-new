@@ -52,8 +52,7 @@ const Hero = () => {
                 <div className="horizontal">
                   <h1 className="mb-4 mt-3">Women's Collection </h1>
                   <p className="mb-4">
-                    A small river named Duden flows by their place and supplies it
-                    with the necessary regelialia. It is a paradisematic country.
+                  Elevate your wardrobe with our chic women's collection, where style meets versatility. Explore fashion that empowers you to shine, no matter the occasion.
                   </p>
                   <p>
                     <Link to={"/products?category=womens"} className="btn-custom">
@@ -87,10 +86,9 @@ const Hero = () => {
                       <div className="text">
                         <span className="subheading">#New Arrival</span>
                         <div className="horizontal">
-                          <h1 className="mb-4 mt-3">Men's Winter Collection</h1>
+                          <h1 className="mb-4 mt-3">Men's Collection</h1>
                           <p className="mb-4">
-                            A small river named Duden flows by their place and supplies it
-                            with the necessary regelialia. It is a paradisematic country.
+                          Discover timeless elegance with our sophisticated men's collection. Elevate your style with curated fashion for every occasion.
                           </p>
                           <p>
                           <Link to={"/products?category=mens"}  className="btn-custom">

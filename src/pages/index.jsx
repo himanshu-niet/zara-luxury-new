@@ -50,8 +50,7 @@ const Index = () => {
                 <div className="media-body">
                   <h3 className="heading">Customer Support</h3>
                   <p>
-                    Far far away, behind the word mountains, far from the countries
-                    Vokalia and Consonantia, there live the blind texts.
+                  Your 24/7 Fashion Lifeline – We've Got Your Back.
                   </p>
                 </div>
               </div>

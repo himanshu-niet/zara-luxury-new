@@ -78,7 +78,7 @@ const Register = () => {
 
           </div>
           <div className="field button-field">
-            <button type='submit'>Signup</button>
+            <button type='submit'>Sign UP</button>
           </div>
         </form>
         <div className="form-link">
@@ -95,7 +95,7 @@ const Register = () => {
       <div className="media-options">
         <a href="#" className="field google">
           <img src="images/google.png" alt="" className="google-img" />
-          <span>Login with Google</span>
+          <span>Register with Google</span>
         </a>
       </div>
     </div>

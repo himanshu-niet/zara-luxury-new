@@ -17,6 +17,9 @@ import Checkout from './pages/checkout.jsx';
 import Thank from './pages/thank';
 import Login from './pages/login';
 import Register from './pages/register';
+import { Provider } from 'react-redux';
+import store from './utils/store';
+
 
 const router = createBrowserRouter([
   {
@@ -65,6 +68,6 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <Provider store={store}><RouterProvider router={router} /></Provider> 
   
 )
