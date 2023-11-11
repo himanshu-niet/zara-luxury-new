@@ -1,4 +1,4 @@
-export const BASE_URL="http://zara.himanshu.tech";
+export const BASE_URL="";
 
 export function getOfferPrice(originalPrice, discountPercentage) {
     if (originalPrice < 0 || discountPercentage < 0 || discountPercentage > 100) {
